@@ -41,13 +41,13 @@ public class UserController {
 	
 	
 	//회원정보 수정
-	@RequestMapping(value="/User/update", method=RequestMethod.POST)
+	@RequestMapping(value="/User/update", method=RequestMethod.PUT)
 	public void update(@RequestBody UpdateDto updateDto) {
 		userService.updateUser(updateDto);
 	}
 	
 	//회원탈퇴
-	@RequestMapping(value="/User/delete/{pw}", method=RequestMethod.POST)
+	@RequestMapping(value="/User/delete/{pw}", method=RequestMethod.DELETE)
 	public void delete(@PathVariable String pw) {
 		userService.deleteUser(pw);
 	}
